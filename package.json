@@ -4,7 +4,9 @@
   "description": "![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./styles/main.css -o ./styles/output.css --watch"
+
   },
   "keywords": [],
   "author": "",

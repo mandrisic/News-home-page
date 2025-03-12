@@ -6,52 +6,79 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link href="./styles/output.css" rel="stylesheet">
   <title>Frontend Mentor | News homepage</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script src="./main.js" defer></script>
 </head>
-<body>
+<body class="font-inter bg-white p-4 lg:px-20 xl:px-40 xl:py-20 text-veryDarkBlue">
+  <header class="bg-white flex justify-between items-center top-0 left-0 fixed py-7 px-4 lg:px-20 lg:pt-10 xl:px-40 xl:pt-20 xl:pb-14 w-full z-20">
+    <img class="h-[28px] lg:h-[36px]" src="./assets/images/logo.svg" alt="logo">
+    <button id="openMenu" aria-expanded="false" aria-label="Open menu" aria-controls="mobileNav" class="lg:hidden">
+      <img class="h-[17px]" src="./assets/images/icon-menu.svg" alt="Open menu">
+    </button>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
+    <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 z-10"></div>
 
-  The Bright Future of Web 3.0?
+    <nav id="mobileNav" class="fixed top-0 right-0 h-full lg:h-auto w-2/3 lg:w-auto bg-white lg:bg-transparent shadow-xl lg:shadow-none p-6 lg:p-0 transform translate-x-full lg:translate-x-0 transition-transform duration-300 z-30 flex flex-col lg:flex-row lg:items-center">
+      <button id="closeMenu" class="absolute top-7 right-4 lg:hidden" aria-label="Close menu">
+        <img class="h-[30px]" src="./assets/images/icon-menu-close.svg" alt="Close menu">
+      </button>
+      <ul class="flex flex-col lg:flex-row lg:items-center gap-6 text-[18px] transition duration-300 pt-24 lg:pt-10 lg:pr-20 xl:px-40 xl:pt-20 xl:pb-14">
+        <li><a href="#" class="text-veryDarkBlue hover:text-red cursor-pointer" tabindex="0">Home</a></li>
+        <li><a href="#" class="text-veryDarkBlue hover:text-red cursor-pointer" tabindex="0">New</a></li>
+        <li><a href="#" class="text-veryDarkBlue hover:text-red cursor-pointer" tabindex="0">Popular</a></li>
+        <li><a href="#" class="text-veryDarkBlue hover:text-red cursor-pointer" tabindex="0">Trending</a></li>
+        <li><a href="#" class="text-veryDarkBlue hover:text-red cursor-pointer" tabindex="0">Categories</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="mainContent" aria-labelledby="main-heading" class="grid grid-cols-1 justify-center lg:grid-cols-3 gap-6 lg:gap-8 content-stretch w-full mt-18 lg:mt-23">
+    
+    <div class="lg:col-start-1 lg:col-end-3 xl:row-start-1 lg:row-end-2 w-full h-[300px] bg-cover bg-center lg:bg-top bg-no-repeat bg-mobile sm:bg-tablet lg:bg-desktop"></div>
+    <h1 id="main-heading" class="lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3  text-[2.5em] font-interExtraBold leading-11 lg:leading-14 lg:text-[2.8em] xl:text-[3.4em]">The Bright Future of Web 3.0?</h1>
+    <div class="flex flex-col justify-between gap-6 mb-8 lg:mb-0 lg:gap-0 lg:col-start-2 lg-col-end-3 lg:row-start-2 lg:row-end-3 lg:leading-6">
+      <p class="text-darkGrayishBlue text-[15px]">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+        But is it really fulfilling its promise?</p>
+      <button tabindex="0" class="bg-red hover:bg-veryDarkBlue cursor-pointer text-veryDarkBlue hover:text-white text-[14px] uppercase font-interExtraBold tracking-[3px] p-3 w-[50%] lg:w-[60%] xl:w-[50%]">Read more</button>
+    </div>
 
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
+    <aside class="bg-veryDarkBlue text-white p-4 lg:p-6 lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-3">
+      <h2 class="font-inter font-bold text-orange text-[30px] lg:text-[32px] xl:text-[38px]">New</h2>
+      <h3 tabindex="0" class="font-bold text-[20px] hover:text-orange cursor-pointer lg:text-[17px] xl:text-[19px] py-3 mt-4">Hydrogen VS Electric Cars</h3>
+      <p class="text-[15px] pb-8 lg:pb-6 border-b-[1px] border-darkGrayishBlue text-grayishBlue">Will hydrogen-fueled cars ever catch up to EVs?</p>
+      <h3 tabindex="0" class="font-bold text-[20px] hover:text-orange cursor-pointer lg:text-[17px] xl:text-[19px] py-3 mt-4">The Downsides of AI Artistry</h3>
+      <p class="text-[15px] pb-8 lg:pb-6 border-b-[1px] border-darkGrayishBlue text-grayishBlue">What are the possible adverse effects of on-demand AI image generation?</p>
+      <h3 tabindex="0" class="font-bold text-[20px] hover:text-orange cursor-pointer lg:text-[17px] xl:text-[19px] py-3 mt-4">Is VC Funding Drying Up?</h3>
+      <p class="text-[15px] pb-2 text-grayishBlue">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+    </aside>
 
-  Read more
+      <div class="flex gap-3 col-span-1 mt-8 lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4">
+        <img class="w-26" src="./assets/images/image-retro-pcs.jpg" alt="Retro PC">
+        <article class="flex flex-col justify-between align-baseline px-2">
+          <h3 class="text-red text-[32px] font-interExtraBold my-[-5px]">01</h3>
+          <h4 class="font-interExtraBold text-[17px] hover:text-red cursor-pointer" tabindex="0">Reviving Retro PCs</h4>
+          <p class="text-[15px] lg:text-[14px] text-darkGrayishBlue">What happens when old PCs are given modern upgrades?</p>
+        </article>
+      </div>
+      <div class="flex gap-3 lg:mt-8 lg:col-start-2 lg:col-end-3 lg:row-start-3 lg:row-end-4">
+        <img class="w-26" src="./assets/images/image-top-laptops.jpg" alt="Keyboard close-up image">
+        <article class="flex flex-col justify-between align-baseline px-2">
+          <h3 class="text-red text-[32px] font-interExtraBold my-[-5px]">02</h3>
+          <h4 class="font-interExtraBold text-[17px] hover:text-red cursor-pointer" tabindex="0">Top 10 Laptops of 2022</h4>
+          <p class="text-[15px] lg:text-[14px] text-darkGrayishBlue">Our best picks for various needs and budgets.</p>
+        </article>
+      </div>
+      <div class="flex col-span-1 lg:mt-8 gap-3 lg:col-start-3 lg:col-end-4 lg:row-start-3 lg:row-end-4">
+        <img class="w-26" src="./assets/images/image-gaming-growth.jpg" alt="Floating joystick">
+        <article class="flex flex-col justify-between align-baseline px-2">
+          <h3 class="text-red text-[32px] font-interExtraBold my-[-5px]">03</h3>
+          <h4 class="font-interExtraBold text-[17px] hover:text-red cursor-pointer" tabindex="0">The Growth of Gaming</h4>
+          <p class="text-[15px] lg:text-[14px] text-darkGrayishBlue">How the pandemic has sparked fresh opportunities.</p>
+        </article>
+      </div>
 
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </main>
+  <footer class="text-center font-bold text-[14px] pt-15 p-4">
+    Challenge by <a class="text-red" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a class="text-red" href="#">Mirna &risic</a>.
+  </footer>
 </body>
 </html>

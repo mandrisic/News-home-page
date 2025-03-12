@@ -1,1 +1,42 @@
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    src: url("../assets/fonts/static/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: Inter-ExtraBold;
+    font-style: extrabold;
+    src: url("../assets/fonts/static/Inter-ExtraBold.ttf") format("truetype");
+}
+
 @import "tailwindcss";
+
+@theme {
+    --font-inter: 'Inter';
+    --font-interExtraBold: 'Inter-ExtraBold';
+    --color-orange: hsl(35, 77%, 62%);
+    --color-red: hsl(5, 85%, 63%);
+    --color-white: hsl(36, 100%, 99%);
+    --color-grayishBlue: hsl(233, 8%, 79%);
+    --color-darkGrayishBlue: hsl(236, 13%, 42%);
+    --color-veryDarkBlue: hsl(240, 100%, 5%);
+}
+
+@layer utilities {
+    .bg-mobile {
+      background-image: url('../assets/images/image-web-3-mobile.jpg');
+    }
+  
+    @media (min-width: 640px) { /* sm breakpoint */
+      .bg-tablet {
+        background-image: url('../assets/images/image-top-laptops.jpg');
+      }
+    }
+  
+    @media (min-width: 1024px) { /* lg breakpoint */
+      .bg-desktop {
+        background-image: url('../assets/images/image-web-3-desktop.jpg');
+      }
+    }
+  }
